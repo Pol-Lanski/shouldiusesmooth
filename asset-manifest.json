@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shouldiusesmooth/static/css/main.845ba59f.css",
-    "main.js": "/shouldiusesmooth/static/js/main.7c2a1658.js",
-    "static/js/453.2b9c4b02.chunk.js": "/shouldiusesmooth/static/js/453.2b9c4b02.chunk.js",
-    "index.html": "/shouldiusesmooth/index.html",
-    "main.845ba59f.css.map": "/shouldiusesmooth/static/css/main.845ba59f.css.map",
-    "main.7c2a1658.js.map": "/shouldiusesmooth/static/js/main.7c2a1658.js.map",
-    "453.2b9c4b02.chunk.js.map": "/shouldiusesmooth/static/js/453.2b9c4b02.chunk.js.map"
+    "main.css": "/static/css/main.845ba59f.css",
+    "main.js": "/static/js/main.bbb0e4d4.js",
+    "static/js/453.2b9c4b02.chunk.js": "/static/js/453.2b9c4b02.chunk.js",
+    "index.html": "/index.html",
+    "main.845ba59f.css.map": "/static/css/main.845ba59f.css.map",
+    "main.bbb0e4d4.js.map": "/static/js/main.bbb0e4d4.js.map",
+    "453.2b9c4b02.chunk.js.map": "/static/js/453.2b9c4b02.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.845ba59f.css",
-    "static/js/main.7c2a1658.js"
+    "static/js/main.bbb0e4d4.js"
   ]
 }
