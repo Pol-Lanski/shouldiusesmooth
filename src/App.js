@@ -8,6 +8,15 @@ function App() {
   const [data, setData] = useState(null); // Store the data from the API
   const [isSubmitted, setIsSubmitted] = useState(false); // To check if the form is submitted
 
+  const commonResources = (
+    <>
+      <p>Here are some resources:</p>
+      <a href="https://docs.dappnode.io/docs/smooth">Smooth's official documentation</a><br />
+      <a href="https://twitter.com/EthereumDenver/status/1763659085507907742">Everything you need to know about Smooth in 20 mins</a><br />
+      <a href="https://github.com/htimsk/SPanalysis">Exhaustive modeling of Smoothing Pools for Rocket Pool by Ken Smith</a><br />
+      <a href="https://twitter.com/dappnode/status/1763595296624300081">X post on how Smooth participants get 120% more than the median validator</a><br />
+    </>
+  );
 
   const checkValidators = async () => {
     if (isSubmitted) {
@@ -33,11 +42,11 @@ function App() {
         console.error('Error:', error);
       }
     }
-  };
+  }
 
   return (
-<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>      
-  <h1>Should you join Smooth?</h1>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>      
+      <h1>Should you join Smooth?</h1>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <label>
             How many validators do you have?
@@ -64,12 +73,8 @@ function App() {
               <br />
               Join now! <a href="https://smooth.dappnode.io/">https://smooth.dappnode.io/</a><br />
               <br />
-              Here are some resources:</p>
-              <a href="https://docs.dappnode.io/docs/smooth">Smooth's official documentation</a><br />
-              <a href="https://twitter.com/EthereumDenver/status/1763659085507907742">Everything you need to know about Smooth in 20 mins</a><br />
-              <a href="https://github.com/htimsk/SPanalysis">Exhaustive modeling of Smoothing Pools for Rocket Pool by Ken Smith</a><br />
-              <a href="https://twitter.com/dappnode/status/1763595296624300081">X post on how Smooth participants get 120% more than the median validator</a><br />
-            {/* Add more links as needed */}
+            </p>
+            {commonResources}
           </div>
         ) : (
           <div>
@@ -80,11 +85,8 @@ function App() {
             You can consider donating to the pool and incentivize Solo Stakers by literally bumping their APR, making it more attractive! <br />
             <a href="https://smooth.dappnode.io/donate">https://smooth.dappnode.io/donate</a><br />
             <br />
-            Here are some resources:</p>
-            <a href="https://docs.dappnode.io/docs/smooth">Smooth's official documentation</a><br />
-            <a href="https://twitter.com/EthereumDenver/status/1763659085507907742">Everything you need to know about Smooth in 20 mins</a><br />
-            <a href="https://github.com/htimsk/SPanalysis">Exhaustive modeling of Smoothing Pools for Rocket Pool by Ken Smith</a><br />
-            <a href="https://twitter.com/dappnode/status/1763595296624300081">X post on how Smooth participants get 120% more than the median validator</a><br />
+            </p>
+            {commonResources}
           </div>
         )}
       </div>}
