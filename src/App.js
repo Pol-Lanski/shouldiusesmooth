@@ -6,33 +6,56 @@ function App() {
   const [validators, setValidators] = useState(''); // Validators that the user will input
   const [result, setResult] = useState(''); // The result of the API check
   const [data, setData] = useState(null); // Store the data from the API
+  const [isSubmitted, setIsSubmitted] = useState(false); // To check if the form is submitted
 
 
   const checkValidators = async () => {
-    try {
-      const response = await fetch('https://smooth.dappnode.io/api/memory/statistics');
-      const data = await response.json();
-      setData(data);
+    if (isSubmitted) {
+      setValidators('');
+      setResult('');
+      setData(null);
+      setIsSubmitted(false);
+    }
+    else {
+      try {
+        const response = await fetch('https://smooth.dappnode.io/api/memory/statistics');
+        const data = await response.json();
+        setData(data);
 
-      if (validators > data.total_subscribed_validators) {
-        setResult('No');
-      } else {
-        setResult('Yes');
+        if (validators > data.total_subscribed_validators) {
+          setResult('No');
+        } else {
+          setResult('Yes');
+        }
+
+        setIsSubmitted(true); 
+      } catch (error) {
+        console.error('Error:', error);
       }
-    } catch (error) {
-      console.error('Error:', error);
     }
   };
 
   return (
-<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>      <h1>Should I join Smooth?</h1>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>      
+  <h1>Should you join Smooth?</h1>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <label>
             How many validators do you have?
           </label>
-          <input type="number" className="input-field" value={validators} onChange={e => setValidators(e.target.value)} />
+          <input 
+            type="number" 
+            className="input-field" 
+            value={validators} 
+            onChange={e => {
+              const val = e.target.value;
+              if ((val === "" || (Number.isInteger(Number(val)) && Number(val) >= 0)) && val.length <= 8) {
+                setValidators(val);
+              }
+            }} 
+            disabled={isSubmitted} // Disable the input field after the form is submitted
+          />
         </div>
-      <button onClick={checkValidators}>Should you?</button>
+        <button onClick={checkValidators}>{isSubmitted ? 'Restart' : 'Should you?'}</button>
       {result && <div>
         {result === 'Yes' ? (
           <div>
