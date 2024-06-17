@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Minimal UI to decide when is it worth to join Smooth
+
+It reads the current size of the pool and makes sure a potential joiner has less validators than this number. This allows for someone to know that it's worth joining the pool as long as they control less than 50% of the total number of validators in the pool.
+
+Note: it has been integrated in a much better look at smooth.dappnode.io.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
